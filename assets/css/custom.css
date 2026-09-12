@@ -1,0 +1,212 @@
+.network-icon {
+  display: flex !important;
+  flex-wrap: nowrap !important;
+  justify-content: center !important;
+  gap: 0.25rem !important;
+  padding-left: 0 !important;
+}
+
+.network-icon li {
+  margin-left: 0 !important;
+  margin-right: 0 !important;
+}
+
+.network-icon a {
+  padding-left: 0.15rem !important;
+  padding-right: 0.15rem !important;
+}
+
+.network-icon i,
+.network-icon svg {
+  font-size: 1.1rem !important;
+}
+
+.table-of-content {
+  margin: 1rem 0 1.5rem;
+}
+
+.table-of-content summary {
+  font-size: 18px;
+  color: #fff;
+  background-color: #555;
+  padding: 5px 20px;
+  margin-bottom: 0 !important;
+  cursor: pointer;
+}
+
+.table-of-content ul li::before {
+  display: none;
+}
+
+.table-of-content #TableOfContents {
+  padding: 10px;
+  background-color: #f7f7f7;
+}
+
+.table-of-content #TableOfContents li,
+.table-of-content #TableOfContents a {
+  color: #333 !important;
+}
+
+.table-of-content #TableOfContents a {
+  text-decoration: none;
+}
+
+.table-of-content #TableOfContents a:hover {
+  text-decoration: underline;
+}
+
+.content .table-of-content ul li,
+.content .table-of-content ol li {
+  margin-bottom: 6px !important;
+}
+
+.dark #TableOfContents {
+  background-color: #333;
+}
+
+.dark #TableOfContents li,
+.dark #TableOfContents a {
+  color: #fff !important;
+}
+
+.table-of-content #TableOfContents ol {
+  list-style-type: decimal !important;
+  list-style-position: outside;
+  padding-left: 1.5rem;
+  margin-left: 0;
+}
+
+.table-of-content #TableOfContents ol ol {
+  list-style-type: decimal !important;
+  padding-left: 1.5rem;
+}
+
+.table-of-content #TableOfContents li {
+  display: list-item !important;
+  list-style: inherit !important;
+}
+
+.table-of-content #TableOfContents li::before {
+  content: none !important;
+  display: none !important;
+}
+
+/* Single post page metadata layout */
+.article-metadata-single {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  text-align: left;
+}
+
+/* Author name stays on its own row */
+.article-metadata-single > div:first-child {
+  flex: 0 0 100%;
+  width: 100%;
+}
+
+/* Date / reading-time remain left-aligned */
+.article-metadata-single .article-date,
+.article-metadata-single .middot-divider,
+.article-metadata-single .article-reading-time,
+.article-metadata-single .article-categories {
+  flex: 0 0 auto;
+}
+
+/* Sharing icons move to the right on the same row */
+.article-metadata-single .share-box {
+  display: flex !important;
+  justify-content: flex-end !important;
+  width: auto !important;
+  margin-left: auto !important;
+  margin-top: 0 !important;
+  padding-left: 1rem;
+}
+
+/* Theme uses ul.share inside share-box */
+.article-metadata-single .share-box ul.share {
+  display: flex !important;
+  align-items: center;
+  justify-content: flex-end !important;
+  margin: 0 !important;
+  padding-left: 0 !important;
+  list-style: none !important;
+}
+
+/* Keep icons horizontal */
+.article-metadata-single .share-box ul.share li {
+  display: inline-block !important;
+  margin-left: 0.35rem;
+}
+
+/* Main posts listing/cards stay normal */
+.article-metadata-list {
+  display: block;
+  text-align: left;
+}
+
+/* To add center alignment of a figure's caption */
+figure.caption-center figcaption,
+figure.caption-center figcaption p {
+  text-align: center;
+}
+
+/* Center 1-2 wiki portfolio cards on the homepage */
+.wiki-portfolio-center .projects-container {
+  display: flex !important;
+  justify-content: center !important;
+  flex-wrap: wrap !important;
+  gap: 30px;
+}
+
+/* To bring even 2 articles in a center aligned card layout under Wiki: 
+Override Isotope/masonry left-positioning for this widget only */
+.wiki-portfolio-center .project-card {
+  position: relative !important;
+  left: auto !important;
+  top: auto !important;
+  transform: none !important;
+
+  width: 31%;
+  margin: 0 0 30px 0 !important;
+}
+
+/* Tablet */
+@media (max-width: 991px) {
+  .wiki-portfolio-center .project-card {
+    width: 45%;
+  }
+}
+
+/* Mobile */
+@media (max-width: 767px) {
+  .wiki-portfolio-center .project-card {
+    width: 100%;
+    max-width: 550px;
+  }
+}
+
+/* The following rule was needed to bolden text using markdown cause default CSS 
+ was overwriting it */
+.article-style strong,
+.article-style b {
+  font-weight: 700;
+}
+
+/* Put "SEE ALL PUBLICATIONS" on its own line */
+#publications .see-all {
+  flex: 0 0 100%;
+  width: 100%;
+  max-width: 100%;
+  text-align: center;
+  margin-top: 1rem;
+}
+
+/* Match publication date to author metadata size */
+.view-list-item .publication-list-date,
+.view-list-item .publication-list-date span,
+.view-list-item .publication-list-date time {
+  font-size: 0.75rem !important;
+  line-height: 1.4;
+}
