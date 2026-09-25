@@ -2,7 +2,7 @@
 # Display name
 name: Michael Araki
 # avatar_image: "user-full.png"
-avatar_image: "Michael2.png"
+avatar_image: "MichaelAraki.jpg"
 # Username (this should match the folder name)
 authors:
 - admin
@@ -15,7 +15,7 @@ btn:
 superuser: true
 
 # Role/position
-role: Lecturer at UNSW Business School
+role: Professor at UNSW Business School
 
 # Organizations/Affiliations
 organizations:
@@ -87,7 +87,28 @@ user_groups:
 - Researchers
 - Visitors
 ---
+### The Triadic Approach to Polymathy
 
-Michael's research interests involve knowledge and its use in creative and entrepreneurial ways. He is conducting a research program on the concept of polymathy—the acquisition and integration of in-depth knowledge across diverse domains—and its implications for innovative behavior and creative problem-solving.
+Polymathy involves the capacity to get and use knowledge in multiple domains productively, and I'm thrilled to see the interest in the term mushrooming on the internet.
 
-He also has a project at the macro level of entrepreneurship studies, investigating the role of institutions, networks, ecosystems, and policy on entrepreneurship and innovation. Method-wise, he has expertise in econometrics (e.g., panel data analysis) and psychometrics (e.g., scale development). Prior to his academic career, Michael worked in a variety of roles, including head of small businesses, enterprise solutions architect, business consultant, teacher, and flight crew.
+For those new to my approach, I go beyond the idea that #polymathy is only accumulation of #knowledge in multiple domains. I think this popular dictionary definition conceals that the productive enactment of polymathy in fact entails three dimensions:
+
+![Alt text describing the image](/img/TriadApproach2Polymathy.jpg)
+
+1. **Breadth**, which refers to the range and diversity of what you know. It expands the set of ideas, perspectives, experiences, and problems you can draw from.
+
+2. **Depth**, which refers to how far you develop knowledge in a given area. It allows you to move beyond superficial familiarity toward understanding, skill, and expertise.
+
+3. **Integration**, the most elusive but perhaps the most important of the three because it turns polymathy from a passive accumulation of knowledge to engage one’s capacity to connect, organize, and mobilize what you learn, know, and experience. It is what allows learning and activity in different places to become mutually useful, even when seemingly disparate or in apparent contradiction for most people.
+
+In sum, full range polymathy must emerge from the conjunction of these three dimensions: expanding #horizontally through breadth, developing #vertically through depth, and structuring #relationally through integration.
+
+That is the **Triadic Approach to Polymathy**.
+
+<div class="about-tags">
+  <span>Polymathy</span>
+  <span>Knowledge</span>
+  <span>Breadth</span>
+  <span>Depth</span>
+  <span>Integration</span>
+</div>

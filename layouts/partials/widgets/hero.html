@@ -1,0 +1,92 @@
+{{ $ := .root }}
+{{ $page := .page }}
+{{ $bg := $page.Params.design.background }}
+
+{{ if $page.Params.hero_media }}
+<div class="row">
+  <div class="col-md-6 order-md-1 text-center text-md-left align-self-center">
+{{ end }}
+
+    {{ with $page.Content }}
+    <div>{{ . }}</div>
+    {{ end }}
+
+    {{/* Call-to-action link */}}
+    {{ if $page.Params.btn.url }}
+      {{ $pack := or $page.Params.btn.icon_pack "fas" }}
+      {{ $pack_prefix := $pack }}
+      {{ if in (slice "fab" "fas" "far" "fal") $pack }}
+        {{ $pack_prefix = "fa" }}
+      {{ end }}
+      {{ $link := $page.Params.btn.url }}
+      {{ $scheme := (urls.Parse $link).Scheme }}
+      {{ $target := "" }}
+      {{ if not $scheme }}
+        {{ $link = $link | relLangURL }}
+      {{ else if in (slice "http" "https") $scheme }}
+        {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+      {{ end }}
+    <p class="mt-4">
+      <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} class="btn {{if $bg.text_color_light}}btn-light{{else}}btn-primary{{end}} btn-lg  page-scroll">{{ if $page.Params.btn.icon }}<i class="{{ $pack }} {{ $pack_prefix }}-{{ $page.Params.btn.icon }} mr-2" aria-hidden="true"></i>{{end}}{{ $page.Params.btn.label | markdownify | emojify | safeHTML }}</a>
+
+      {{/* Alternative Call-to-action link */}}
+      {{ if $page.Params.btn_alt.url }}
+        {{ $link := $page.Params.btn_alt.url }}
+        {{ $scheme := (urls.Parse $link).Scheme }}
+        {{ $target := "" }}
+        {{ if not $scheme }}
+          {{ $link = $link | relLangURL }}
+        {{ else if in (slice "http" "https") $scheme }}
+          {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+        {{ end }}
+      <a href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} class="btn btn-lg {{if $bg.text_color_light}}btn-outline-light{{else}}btn-outline-primary{{end}} page-scroll">{{ if $page.Params.btn_alt.icon }}<i class="{{ $pack }} {{ $pack_prefix }}-{{ $page.Params.btn_alt.icon }} mr-2" aria-hidden="true"></i>{{end}}{{ $page.Params.btn_alt.label | markdownify | emojify | safeHTML }}</a>
+      {{ end }}
+    </p>
+    {{ end }}
+
+  {{/* Hero image */}}
+  {{ if $page.Params.hero_media }}
+  </div>
+
+  <div class="col-12 col-md-6 order-md-2 hero-media text-center d-flex flex-column align-items-center">
+    <img class="hero-img img-fluid d-block mx-auto" src="{{ printf "img/%s" $page.Params.hero_media | relURL }}" alt="Hero image">
+
+    {{ if $page.Params.show_social }}
+      {{ $author := $page.Params.author | default "admin" }}
+      {{ $person_page_path := printf "/authors/%s" (urlize $author) }}
+      {{ $person_page := site.GetPage $person_page_path }}
+
+      {{ if and $person_page $person_page.Params.social }}
+      <div class="hero-social-below w-100 d-block text-center mt-3">
+        <ul class="hero-social-icons" aria-hidden="true" style="display:flex; justify-content:center; align-items:center; gap:0.9rem; list-style:none; padding-left:0; margin:0 auto;">
+          {{ range $person_page.Params.social }}
+            {{ $pack := or .icon_pack "fas" }}
+            {{ $pack_prefix := $pack }}
+            {{ if in (slice "fab" "fas" "far" "fal") $pack }}
+              {{ $pack_prefix = "fa" }}
+            {{ end }}
+
+            {{ $link := .link }}
+            {{ $scheme := (urls.Parse $link).Scheme }}
+            {{ $target := "" }}
+
+            {{ if not $scheme }}
+              {{ $link = .link | relLangURL }}
+            {{ else if in (slice "http" "https") $scheme }}
+              {{ $target = "target=\"_blank\" rel=\"noopener\"" }}
+            {{ end }}
+
+            <li style="display:inline-block; margin:0;">
+              <a itemprop="sameAs" href="{{ $link | safeURL }}" {{ $target | safeHTMLAttr }} style="font-size:1.35rem;">
+                <i class="{{ $pack }} {{ $pack_prefix }}-{{ .icon }}"></i>
+              </a>
+            </li>
+          {{ end }}
+        </ul>
+      </div>
+      {{ end }}
+    {{ end }}
+  </div>
+
+</div>
+{{ end }}
