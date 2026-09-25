@@ -9,7 +9,10 @@ title = "Academia"
 
 # Hero image (optional). Enter filename of an image in the `static/img/` folder.
 # hero_media = "user-2.jpg"
-hero_media = "Michael2.png"
+hero_media = "MichaelAraki.jpg"
+
+author = "admin"
+show_social = true
 
 [design.background]
   # Apply a background color, gradient, or image.
@@ -43,6 +46,6 @@ hero_media = "Michael2.png"
   label = "Contact me"
 
 +++
-## My name is **Michael Araki** and I'm an **Assistant Professor** specializing in **Enterpreneurship and Polymathy**
+## My name is **Dr. Michael Araki** and I'm a **Professor** at **UNSW Sydney**
 
-My interests also include psychometrics, econometrics, statistics, data analysis, innovation and creativity.
+My research work lies at the interface of polymathy, creativity, and entrepreneurship.
